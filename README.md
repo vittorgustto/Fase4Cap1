@@ -26,13 +26,13 @@
 
 ## 📜 Descrição
 
-### Chatbot Dra. Jô ###
-O Projeto Solubio é uma solução de chatbot e backend que otimiza o atendimento ao cliente via WhatsApp, Telegram e website, usando NLP (Dialogflow) para interpretar mensagens e fornecer respostas automáticas. Com backend em Node.js e infraestrutura AWS, conecta interfaces de usuário com bancos de dados para gerenciar agendamentos e interações de forma eficiente.
+### Projeto Fase 4 - Sistema de Irrigação Inteligente ###
+Este repositório contém a implementação da **Fase 4** do projeto **FarmTech Solutions**, que visa aprimorar um sistema de irrigação automatizado, incorporando a inteligência preditiva utilizando **Scikit-learn**, uma interface interativa com **Streamlit**, otimização de código no **ESP32** e integração com um sistema de monitoramento visual em tempo real.
 
-### Objetivo ###
-O projeto visa o desenvolvimento de uma solução integrada para atendimento e suporte automatizado, com foco em agendamentos e vendas. A solução utiliza diversas interfaces de usuário, como WhatsApp, Telegram e um website, para oferecer respostas rápidas e personalizadas, melhorando a experiência do usuário e aumentando a eficiência do atendimento.
+### Descrição do Projeto ###
+O objetivo desta fase é aprimorar a aplicação desenvolvida na **Fase 3**, trazendo novas funcionalidades e melhorias na utilização de recursos já apresentados nas fases anteriores.
 
-### Tecnologias Utilizadas ###
+### Funcionalidades Implementadas: ###
 * Frontend: Interfaces de usuário para WhatsApp, Telegram e website, que enviam mensagens dos usuários ao sistema.
 * NLP (Processamento de Linguagem Natural): Dialogflow, para interpretar as mensagens dos usuários, identificar intenções e fornecer respostas adequadas.
 * Backend (Server): Node.js para coordenar a lógica do sistema e integrar os dados entre o Dialogflow, o banco de dados e a infraestrutura AWS.
