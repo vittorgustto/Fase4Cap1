@@ -53,6 +53,24 @@ O objetivo desta fase é aprimorar a aplicação desenvolvida na **Fase 3**, tra
   - `pyserial`
 - **Wokwi** para simulação do ESP32 (opcional).
 
+### Instruções de Uso ###
+
+1. Clone o repositório
+
+   ```bash
+   git clone https://github.com/vittorgustto/Fase4Cap1.git
+   cd Fase4Cap1
+
+2. Para rodar o código do ESP32, abra o código no Arduino IDE, configure a placa para ESP32 e envie o código para o seu dispositivo.
+3. Para rodar o dashboard interativo com Streamlit, execute o seguinte comando no diretório onde o código Python está localizado:
+
+bash
+Copiar código
+streamlit run dashboard.py
+
+### Vídeo Demonstrativo ###
+
+O vídeo demonstrando o funcionamento do sistema atualizado está disponível no link do vídeo.
 
 ## 📁 Estrutura de pastas
 
