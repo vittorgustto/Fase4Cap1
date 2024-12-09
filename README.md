@@ -33,12 +33,12 @@ Este repositório contém a implementação da **Fase 4** do projeto **FarmTech 
 O objetivo desta fase é aprimorar a aplicação desenvolvida na **Fase 3**, trazendo novas funcionalidades e melhorias na utilização de recursos já apresentados nas fases anteriores.
 
 ### Funcionalidades Implementadas: ###
-* Frontend: Interfaces de usuário para WhatsApp, Telegram e website, que enviam mensagens dos usuários ao sistema.
-* NLP (Processamento de Linguagem Natural): Dialogflow, para interpretar as mensagens dos usuários, identificar intenções e fornecer respostas adequadas.
-* Backend (Server): Node.js para coordenar a lógica do sistema e integrar os dados entre o Dialogflow, o banco de dados e a infraestrutura AWS.
-* Banco de Dados:
-   MongoDB: Para armazenamento de informações estruturadas dos usuários, agendamentos e interações.
-   AWS RDS: Para gerenciamento de dados transacionais mais complexos.
+- **Modelo Preditivo com Scikit-learn**: Um modelo preditivo foi desenvolvido para prever a necessidade de irrigação, baseado em dados históricos de umidade e nutrientes do solo.
+- **Interface de Visualização com Streamlit**: Um dashboard interativo foi criado com Streamlit, permitindo a visualização em tempo real dos dados do sistema de irrigação, incluindo gráficos da variação da umidade, níveis de nutrientes e previsões de irrigação.
+- **Otimização no ESP32**: O código C/C++ do ESP32 foi otimizado para melhor uso de memória e desempenho, com ajustes em tipos de dados e variáveis.
+- **Exibição de Dados no Display LCD**: Um display LCD conectado ao ESP32 exibe em tempo real as métricas de umidade, temperatura e status da irrigação.
+- **Monitoramento com Serial Plotter**: Utilização do Serial Plotter para monitorar a variação de umidade do solo em tempo real durante a simulação.
+
 * Infraestrutura AWS:
    AWS Lambda: Para execução de funções sob demanda, incluindo cálculos e envio de notificações.
    AWS S3: Para armazenamento de arquivos estáticos, como conteúdos e relatórios.
