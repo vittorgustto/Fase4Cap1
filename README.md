@@ -67,6 +67,12 @@ O objetivo desta fase é aprimorar a aplicação desenvolvida na **Fase 3**, tra
 bash
 Copiar código
 streamlit run dashboard.py
+### Imagens ###
+
+![Dashboard](document/Dashboard1.png)
+![ ](document/Dashboard2.png)
+![ ](document/Dashboard3.png)
+![ ](document/ESP32.png)
 
 ### Vídeo Demonstrativo ###
 
