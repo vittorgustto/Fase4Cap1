@@ -39,59 +39,19 @@ O objetivo desta fase é aprimorar a aplicação desenvolvida na **Fase 3**, tra
 - **Exibição de Dados no Display LCD**: Um display LCD conectado ao ESP32 exibe em tempo real as métricas de umidade, temperatura e status da irrigação.
 - **Monitoramento com Serial Plotter**: Utilização do Serial Plotter para monitorar a variação de umidade do solo em tempo real durante a simulação.
 
-* Infraestrutura AWS:
-   AWS Lambda: Para execução de funções sob demanda, incluindo cálculos e envio de notificações.
-   AWS S3: Para armazenamento de arquivos estáticos, como conteúdos e relatórios.
+### Estrutura do Repositório ###
+- **ESP32**: Código C/C++ que gerencia os sensores, controla a irrigação, e exibe informações no display LCD.
+- **Python**: Código Python que utiliza **Scikit-learn** para criar um modelo preditivo e **Streamlit** para criar uma interface interativa de monitoramento.
+- **Banco de Dados**: Melhorias na estrutura do banco de dados para registrar e consultar dados históricos de umidade, temperatura, e previsão de irrigação.
 
-### Arquitetura da Solução ###
-1. Interfaces de Usuário:
-* WhatsApp, Telegram e Website: Canais de comunicação pelos quais os usuários interagem com o chatbot.
-2. Motor NLP (Dialogflow):
-* Interpreta as mensagens dos usuários, identificando intenções e enviando os dados para o backend.
-3. Backend (Server em Node.js):
-* Coordena a lógica do sistema, recebendo dados do Dialogflow, consultando MongoDB e AWS RDS, e interagindo com AWS Lambda e S3 para executar funções específicas.
-4. Banco de Dados:
-* MongoDB: Armazena dados estruturados dos usuários, agendamentos e histórico de interações.
-* AWS RDS: Gerencia dados transacionais complexos, conforme necessário.
-5. Infraestrutura AWS:
-* AWS Lambda: Executa funções específicas sob demanda.
-* AWS S3: Armazena arquivos estáticos necessários para o sistema.
+### Requisitos ###
 
-### Custos Previstos e Justificativa ###
-
-1. *Dialogflow (Google Cloud):*
-   - *Camada Gratuita:* Permite 1.000 solicitações por mês gratuitamente.
-   - *Custo Adicional:* Aproximadamente US$ 0,002 por solicitação adicional.
-   - *Justificativa:* Necessário para interpretar mensagens de usuários e fornecer respostas adequadas. O custo dependerá do volume de interações.
-
-2. *MongoDB (Atlas):*
-   - *Camada Gratuita:* Oferece até 512 MB de armazenamento.
-   - *Custo Adicional:* Planos começam a partir de US$ 9 por mês para maior capacidade.
-   - *Justificativa:* Armazena dados de pacientes, interações e agendamentos. A versão gratuita pode ser suficiente para MVPs.
-
-3. *AWS Lambda:*
-   - *Camada Gratuita:* 1 milhão de execuções gratuitas por mês.
-   - *Custo Adicional:* US$ 0,20 por milhão de solicitações adicionais.
-   - *Justificativa:* Executa funções sob demanda, garantindo escalabilidade e eficiência.
-
-4. *AWS S3:*
-   - *Camada Gratuita:* 5 GB de armazenamento gratuito por mês.
-   - *Custo Adicional:* US$ 0,023 por GB adicional.
-   - *Justificativa:* Armazena arquivos estáticos, como documentos e logs.
-
-5. *AWS RDS:*
-   - *Camada Gratuita:* 750 horas de uso gratuito por mês (durante 12 meses) e 20 GB de armazenamento.
-   - *Custo Adicional:* Planos começam a partir de US$ 15 por mês, dependendo do tipo de banco de dados.
-   - *Justificativa:* Gerencia transações e dados estruturados de forma robusta.
-
-6. *WhatsApp Business API:*
-   - *Camada Gratuita:* Não possui.
-   - *Custo Adicional:* Aproximadamente US$ 0,05 por mensagem.
-   - *Justificativa:* Necessário para comunicação direta com pacientes via WhatsApp.
-
-### Diagrama da Arquitetura ###
-
-![Diagrama da Arquitetura](document/arquitetura.png)
+- **Arduino IDE** para o código do ESP32.
+- **Python 3.x** com as bibliotecas:
+  - `scikit-learn`
+  - `streamlit`
+  - `pyserial`
+- **Wokwi** para simulação do ESP32 (opcional).
 
 
 ## 📁 Estrutura de pastas
