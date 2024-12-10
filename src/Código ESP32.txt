@@ -1,0 +1,70 @@
+#include <Wire.h>
+#include <LiquidCrystal_I2C.h>
+#include <ArduinoJson.h>  // Biblioteca para manipular JSON
+
+// Configuração do display LCD
+LiquidCrystal_I2C lcd(0x27, 16, 2); // Endereço I2C do display, 16 colunas e 2 linhas
+
+// Configuração dos pinos dos sensores
+const int sensorUmidadePin = 34;      // Pino analógico para o sensor de umidade
+const int sensorTemperaturaPin = 35; // Pino analógico para o sensor de temperatura
+
+void setup() {
+  // Inicialização do Serial Monitor
+  Serial.begin(115200);
+
+  // Inicialização do display LCD
+  lcd.init();        // Inicializa o LCD
+  lcd.backlight();   // Liga a luz de fundo do LCD
+  lcd.clear();       // Limpa qualquer texto remanescente no LCD
+  lcd.print("Iniciando...");
+
+  delay(2000); // Mostra a mensagem inicial por 2 segundos
+  lcd.clear();
+}
+
+void atualizarDisplay(int umidade, int temperatura) {
+  // Atualiza o display LCD com os valores de umidade e temperatura
+  lcd.setCursor(0, 0); // Posição inicial da primeira linha
+  lcd.print("Umidade: ");
+  lcd.print(umidade);
+  lcd.print("%");
+
+  lcd.setCursor(0, 1); // Posição inicial da segunda linha
+  lcd.print("Temp: ");
+  lcd.print(temperatura);
+  lcd.print("C");
+}
+
+void loop() {
+  // Leitura otimizada dos sensores
+  int umidade = map(analogRead(sensorUmidadePin), 0, 4095, 0, 100);   // Valores de 0 a 100%
+  int temperatura = map(analogRead(sensorTemperaturaPin), 0, 4095, -40, 125); // Valores típicos para sensores de temperatura
+
+  // Envia os dados para o Serial Monitor e Serial Plotter
+  Serial.print("Umidade: ");
+  Serial.print(umidade);
+  Serial.print("%, Temp: ");
+  Serial.print(temperatura);
+  Serial.println("C");
+
+  // Dados formatados para o Serial Plotter
+  Serial.print("Umidade:");
+  Serial.print(umidade);
+  Serial.print("\tTemperatura:");
+  Serial.println(temperatura);
+
+  // Enviar os dados em formato JSON para o Python
+  StaticJsonDocument<200> doc;
+  doc["umidade"] = umidade;
+  doc["temperatura"] = temperatura;
+
+  // Serializa o objeto JSON e envia via Serial
+  serializeJson(doc, Serial);
+  Serial.println();  // Quebra de linha para separar as mensagens JSON
+
+  // Atualiza o display LCD
+  atualizarDisplay(umidade, temperatura);
+
+  delay(2000); // Atualização a cada 2 segundos
+}
