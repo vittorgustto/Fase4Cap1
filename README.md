@@ -6,7 +6,6 @@
 
 <br>
 
-# Chatbot Solubio
 
 ## Grupo 67
 
