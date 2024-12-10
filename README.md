@@ -76,7 +76,7 @@ streamlit run dashboard.py
 
 ### Vídeo Demonstrativo ###
 
-O vídeo demonstrando o funcionamento do sistema atualizado está disponível no link do vídeo.
+[Link do vídeo](https://youtu.be/F-sXUfZe3tw)
 
 ## 📁 Estrutura de pastas
 
